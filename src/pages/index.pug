@@ -1,0 +1,55 @@
+extends common/layout
+
+block content
+  main
+    section.register
+      .register__content
+        .container
+          .register__inner
+            h1.title.register__title Регистрация
+            form#form-register.form(action="#" name="register" novalidate)
+              .spinner
+                div
+                div
+                div
+                div
+              .form__group
+                label.form__control(data-form-control)
+                  span.form__label-txt Имя
+                  input.input(name="register-name" type="text" data-form-name)
+                  .form__error(data-form-error)
+                label.form__control(data-form-control)
+                  span.form__label-txt Фамилия
+                  input.input(name="register-second-name" type="text" data-form-second-name)
+                  .form__error(data-form-error)
+              .form__group
+                label.form__control(data-form-control)
+                  span.form__label-txt Email
+                  input.input(name="register-email" type="email" data-form-email)
+                  .form__error(data-form-error)
+                label.form__control(data-form-control)
+                  span.form__label-txt Телефон
+                  input.input(name="register-phone" type="tel" data-form-phone)
+                  .form__error(data-form-error)
+              label.form__control(data-form-control)
+                span.form__label-txt Пароль
+                .form__input-wrapper
+                  input.input(name="register-password" type="password" data-form-password)
+                  button.form__password-toggle(type="button" data-form-password-toggle)
+                .form__error(data-form-error)
+              label.form__control(data-form-control)
+                span.form__label-txt ИНН
+                input.input(name="register-inn" type="text" data-form-inn)
+                .form__error(data-form-error)
+              p.form__txt
+                span *&nbsp;
+                |- обязательные поля
+              .form__control(data-form-control)
+                label.checkbox
+                  input.checkbox__input(name="register-agreement" type="checkbox" value="newsletter" checked hidden data-form-agreement)
+                  span.checkbox__styled
+                  span.checkbox__txt Да, я хочу получать письма с новостями и предложениями
+                .form__error(data-form-error)
+              button.button(type="submit" data-form-submit) Далее
+      .register__img
+        img(src="assets/img/svg/form.svg", width="698", height="1114", alt="")

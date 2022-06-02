@@ -1,0 +1,124 @@
+.form {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 2.5rem;
+}
+
+.form__group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2.1rem;
+
+  @include media-tablet-sm {
+    grid-gap: 12px;
+  }
+
+  @include media-custom(374px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.form__control {
+  position: relative;
+
+  align-self: flex-start;
+
+  &.error {
+    .input {
+      border-color: $color-red-alpha;
+    }
+
+    .form__error {
+      display: block;
+    }
+  }
+
+  &.required {
+    .form__label-txt {
+      &::after {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+.form__label-txt {
+  position: relative;
+
+  display: block;
+
+  color: $color-gray-alpha;
+  font-size: 13px;
+
+  margin-bottom: 13px;
+
+  &::after {
+    display: none;
+
+    content: '*';
+
+    margin-left: 5px;
+
+    color: $color-red-alpha;
+    font-weight: 600;
+  }
+}
+
+.form__error {
+  display: none;
+
+  font-size: 13px;
+
+  margin-top: 10px;
+
+  color: $color-black-beta;
+
+  a {
+    color: $color-red-alpha;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.form__txt {
+  color: $color-gray-alpha;
+  font-size: 13px;
+
+  margin-bottom: 5px;
+
+  span {
+    color: $color-red-alpha;
+  }
+}
+
+.form__input-wrapper {
+  position: relative;
+}
+
+.form__password-toggle {
+  position: absolute;
+
+  top: 50%;
+  right: 17px;
+
+  height: 24px;
+  width: 24px;
+
+  transform: translateY(-50%);
+
+  background-image: url('../img/svg/eye.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 24px;
+
+  &.active {
+    background-image: url('../img/svg/eye-active.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 24px;
+  }
+}
