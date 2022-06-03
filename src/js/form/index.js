@@ -585,12 +585,12 @@ class FormValidation {
       if (this.formElements.inputs[key] && this.defaultConfig[key].isRequired) {
         if (Array.isArray(this.formElements.inputs[key])) {
           this.formElements.inputs[key].forEach((el) => {
-            el.parentElement.classList.add(CLASSES.required);
+            el.closest(DATA_ATTR.formControl).classList.add(CLASSES.required);
           });
         } else {
-          this.formElements.inputs[key].parentElement.classList.add(
-            CLASSES.required
-          );
+          this.formElements.inputs[key]
+            .closest(DATA_ATTR.formControl)
+            .classList.add(CLASSES.required);
         }
       }
     });
